@@ -434,7 +434,8 @@ Private Function outputDir() As String
         tp = Split(outputDir, "\")
         For Each i In tp
             pp = pp & IIf(pp = "", "", "\") & i
-            If Not fso.FolderExists(pp & "\") Then
+'            If Not fso.FolderExists(pp & "\") Then
+            If Dir(pp, vbDirectory) = "" Then
                 fso.CreateFolder pp
             End If
         Next i
