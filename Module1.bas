@@ -77,3 +77,25 @@ Public Function cmnGetEndOfMonth(sDate As Date) As String
 
 End Function
 
+
+'---------------------------------------------------------------------------------------
+Public Function CheckHoliday(dt As Date) As Boolean
+Dim flg As Boolean
+    'holiday(祝祭日テーブル)テーブルを検索し、引数として受け取った日付が祝祭日に
+    'あたるかどうか確認する
+    If IsNull(DLookup("holiday", "holiday", "holiday = #" & Format(dt, "yyyy/mm/dd") & "#")) Then
+        '祝祭日に該当しない場合は、土曜日か日曜日かをチェック
+        '土日が休みでない場合は、Caseに指定する数値を該当の曜日を表す数値に変更する。
+        Select Case Weekday(dt, vbSunday) '日曜日が1、土曜日が7になる
+            Case 1
+                CheckHoliday = True
+            Case 7
+                CheckHoliday = True
+            Case Else
+                CheckHoliday = False
+        End Select
+    Else
+        '引数に指定した日付がholiday(祝祭日テーブル)テーブルの日付に該当、つまり祝祭日
+        CheckHoliday = True
+    End If
+End Function
