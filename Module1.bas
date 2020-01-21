@@ -4,13 +4,13 @@ Option Explicit
 
 Public Function IsHoliday(dDate As Variant) As Boolean
   On Error GoTo Err_Trap
-'“ú•tŒ^‚Ìˆø”‚Ìê‡‚ÍFalse‚ğ•Ô‚·
+'æ—¥ä»˜å‹ã®å¼•æ•°ã®å ´åˆã¯Falseã‚’è¿”ã™
   If IsDate(dDate) = False Then
     IsHoliday = False
     Exit Function
   End If
   
-  If Weekday(dDate) = 1 Or Weekday(dDate) = 7 Or DCount("*", "M_‹x“ú", "‹x“ú=#" & dDate & "#") Then
+  If Weekday(dDate) = 1 Or Weekday(dDate) = 7 Or DCount("*", "M_ä¼‘æ—¥", "ä¼‘æ—¥=#" & dDate & "#") Then
     IsHoliday = True
   Else
     IsHoliday = False
@@ -19,7 +19,7 @@ Public Function IsHoliday(dDate As Variant) As Boolean
 Exit Function
 
 Err_Trap:
-  'ƒGƒ‰[”­¶‚ÍFalse‚ğ•Ô‚·
+  'ã‚¨ãƒ©ãƒ¼ç™ºç”Ÿæ™‚ã¯Falseã‚’è¿”ã™
   IsHoliday = False
   Exit Function
 End Function
@@ -54,7 +54,7 @@ Sub test_cmnGetEndOfMonth()
     Dim TestDate As String
 
 Debug.Print "test_cmnGetEndOfMonth"
-Debug.Print "İ’è’l@:–ß‚è’l"
+Debug.Print "è¨­å®šå€¤ã€€:æˆ»ã‚Šå€¤"
 
     TestDate = "20200101": GoSub Result
     TestDate = "20200201": GoSub Result
@@ -69,7 +69,7 @@ Return
 End Sub
 
 '---------------------------------------------------------------------------------------
-'w’è‚µ‚½”NŒ“ú‚É‘Î‰‚·‚éŒ––“ú‚ğæ“¾
+'æŒ‡å®šã—ãŸå¹´æœˆæ—¥ã«å¯¾å¿œã™ã‚‹æœˆæœ«æ—¥ã‚’å–å¾—
 '---------------------------------------------------------------------------------------
 Public Function cmnGetEndOfMonth(sDate As Date) As String
 
@@ -81,12 +81,12 @@ End Function
 '---------------------------------------------------------------------------------------
 Public Function CheckHoliday(dt As Date) As Boolean
 Dim flg As Boolean
-    'holiday(jÕ“úƒe[ƒuƒ‹)ƒe[ƒuƒ‹‚ğŒŸõ‚µAˆø”‚Æ‚µ‚Äó‚¯æ‚Á‚½“ú•t‚ªjÕ“ú‚É
-    '‚ ‚½‚é‚©‚Ç‚¤‚©Šm”F‚·‚é
+    'holiday(ç¥ç¥­æ—¥ãƒ†ãƒ¼ãƒ–ãƒ«)ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’æ¤œç´¢ã—ã€å¼•æ•°ã¨ã—ã¦å—ã‘å–ã£ãŸæ—¥ä»˜ãŒç¥ç¥­æ—¥ã«
+    'ã‚ãŸã‚‹ã‹ã©ã†ã‹ç¢ºèªã™ã‚‹
     If IsNull(DLookup("holiday", "holiday", "holiday = #" & Format(dt, "yyyy/mm/dd") & "#")) Then
-        'jÕ“ú‚ÉŠY“–‚µ‚È‚¢ê‡‚ÍA“y—j“ú‚©“ú—j“ú‚©‚ğƒ`ƒFƒbƒN
-        '“y“ú‚ª‹x‚İ‚Å‚È‚¢ê‡‚ÍACase‚Éw’è‚·‚é”’l‚ğŠY“–‚Ì—j“ú‚ğ•\‚·”’l‚É•ÏX‚·‚éB
-        Select Case Weekday(dt, vbSunday) '“ú—j“ú‚ª1A“y—j“ú‚ª7‚É‚È‚é
+        'ç¥ç¥­æ—¥ã«è©²å½“ã—ãªã„å ´åˆã¯ã€åœŸæ›œæ—¥ã‹æ—¥æ›œæ—¥ã‹ã‚’ãƒã‚§ãƒƒã‚¯
+        'åœŸæ—¥ãŒä¼‘ã¿ã§ãªã„å ´åˆã¯ã€Caseã«æŒ‡å®šã™ã‚‹æ•°å€¤ã‚’è©²å½“ã®æ›œæ—¥ã‚’è¡¨ã™æ•°å€¤ã«å¤‰æ›´ã™ã‚‹ã€‚
+        Select Case Weekday(dt, vbSunday) 'æ—¥æ›œæ—¥ãŒ1ã€åœŸæ›œæ—¥ãŒ7ã«ãªã‚‹
             Case 1
                 CheckHoliday = True
             Case 7
@@ -95,7 +95,68 @@ Dim flg As Boolean
                 CheckHoliday = False
         End Select
     Else
-        'ˆø”‚Éw’è‚µ‚½“ú•t‚ªholiday(jÕ“úƒe[ƒuƒ‹)ƒe[ƒuƒ‹‚Ì“ú•t‚ÉŠY“–A‚Â‚Ü‚èjÕ“ú
+        'å¼•æ•°ã«æŒ‡å®šã—ãŸæ—¥ä»˜ãŒholiday(ç¥ç¥­æ—¥ãƒ†ãƒ¼ãƒ–ãƒ«)ãƒ†ãƒ¼ãƒ–ãƒ«ã®æ—¥ä»˜ã«è©²å½“ã€ã¤ã¾ã‚Šç¥ç¥­æ—¥
         CheckHoliday = True
     End If
 End Function
+
+
+
+Sub test_funcæœˆé–“å–¶æ¥­æ—¥æ•°()
+
+    Debug.Print funcæœˆé–“å–¶æ¥­æ—¥æ•°("2020/2/22")
+
+End Sub
+
+Public Function funcæœˆé–“å–¶æ¥­æ—¥æ•°(ByVal strDate As String) As Long
+
+On Error GoTo Err_Proc
+    
+    Dim æœˆåˆæ—¥ As Date, æœˆæœ«æ—¥ As Date
+    
+    Dim db              As ADODB.Connection
+    Dim rs              As ADODB.Recordset
+    
+    '// ã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼ãƒã‚¹ã‚¿ä¸Šã®ç¥ç¥­æ—¥ä¼‘æ¥­æ—¥ãŠã‚ˆã³åœŸæ—¥å–¶æ¥­æ—¥ã®æ—¥æ•°ã‚’å–å¾—
+    Dim strSQL As String: strSQL = ""
+    strSQL = "SELECT count(*) FROM Mã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼ AS a "
+    strSQL = strSQL & "WHERE (a.æ—¥ä»˜) Between #" & æœˆåˆæ—¥ & "# And #" & æœˆæœ«æ—¥ & "# AND a.ä¼‘æ¥­åŒºåˆ† = '1'"
+
+
+    æœˆåˆæ—¥ = DateSerial(Year(strDate), Month(strDate), 1)
+    æœˆæœ«æ—¥ = DateSerial(Year(strDate), Month(strDate) + 1, 0)
+
+    '// æœˆé–“æ—¥æ•°ã‹ã‚‰åœŸæ—¥ã‚’é™¤ã„ãŸæ—¥æ•°ã‚’ç®—å‡º
+    Dim dtTmp As Date: dtTmp = æœˆåˆæ—¥
+    Dim å–¶æ¥­æ—¥æ•° As Long: å–¶æ¥­æ—¥æ•° = 0
+    Do While (dtTmp <= æœˆæœ«æ—¥)
+
+        If ((Weekday(dtTmp) <> vbSunday) And _
+            (Weekday(dtTmp) <> vbSaturday)) Then
+            å–¶æ¥­æ—¥æ•° = å–¶æ¥­æ—¥æ•° + 1
+        End If
+
+        dtTmp = dtTmp + 1
+    Loop
+    
+'    Set db = CurrentDb
+'    Set rs = db.OpenRecordset(strSQL)
+'    With rs
+'        If Not .EOF Then
+'            .Move (N - 1)
+'            Hiduke = .Fields("æ—¥ä»˜")
+'        End If
+'    End With
+'    rs.Close
+'    db.Close
+    
+Exit_funcæœˆé–“å–¶æ¥­æ—¥æ•°:
+    funcæœˆé–“å–¶æ¥­æ—¥æ•° = å–¶æ¥­æ—¥æ•°
+    Exit Function
+
+Err_Proc:
+    funcæœˆé–“å–¶æ¥­æ—¥æ•° = 0
+    Resume Exit_funcæœˆé–“å–¶æ¥­æ—¥æ•°
+
+End Function
+
