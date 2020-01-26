@@ -1,14 +1,14 @@
 Attribute VB_Name = "excel_report"
 '---------------------------------------------------------------------------------------
-' Module    : ExcelŠÖ˜Aˆ—
-' Purpose   : Excel‚ÉŠÖ‚í‚éˆ—‚ğ‚Ü‚Æ‚ß‚½ƒ‚ƒWƒ…[ƒ‹
-'             Microsoft Excel xx Object Library ‚Ö‚ÌQÆİ’è‚ª•K—v
+' Module    : Excelé–¢é€£å‡¦ç†
+' Purpose   : Excelã«é–¢ã‚ã‚‹å‡¦ç†ã‚’ã¾ã¨ã‚ãŸãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«
+'             Microsoft Excel xx Object Library ã¸ã®å‚ç…§è¨­å®šãŒå¿…è¦
 '---------------------------------------------------------------------------------------
 Option Compare Database
 Option Explicit
 
 
-'‹¤’Ê•Ï”‚Ì’è‹`
+'å…±é€šå¤‰æ•°ã®å®šç¾©
 Private xlapp As Excel.Application
 'Public xlsBook As Excel.Workbooks
 Private wb As Excel.Workbook
@@ -19,7 +19,7 @@ Private myCn As New ADODB.Connection
 Private myRs As New ADODB.Recordset
 
 '---------------------------------------------------------------------------------------
-' Exce‚ğ‹N“®
+' Exceã‚’èµ·å‹•
 '---------------------------------------------------------------------------------------
 Private Function xlappOpen()
     
@@ -30,7 +30,7 @@ Private Function xlappOpen()
 End Function
 
 '---------------------------------------------------------------------------------------
-' Excel‚ğI—¹
+' Excelã‚’çµ‚äº†
 '---------------------------------------------------------------------------------------
 Private Function xlappClose()
 
@@ -39,7 +39,7 @@ Private Function xlappClose()
 End Function
 
 '---------------------------------------------------------------------------------------
-' ADO Recordset‚ğì¬
+' ADO Recordsetã‚’ä½œæˆ
 '---------------------------------------------------------------------------------------
 Private Function Create_ADO_Recordset(SQL As String)
     Set myCn = CurrentProject.Connection
@@ -51,7 +51,7 @@ End Function
 '    myRs.Open QERY, myCn, adOpenForwardOnly, adLockReadOnly
 
 '---------------------------------------------------------------------------------------
-' ADO Recordset‚ğI—¹
+' ADO Recordsetã‚’çµ‚äº†
 '---------------------------------------------------------------------------------------
 Private Function ADO_Close() As Boolean
     ADO_Close = False
@@ -61,12 +61,12 @@ Private Function ADO_Close() As Boolean
 End Function
 
 
-Sub test_”»’è_‰ïŒv”N“x()
+Sub test_åˆ¤å®š_ä¼šè¨ˆå¹´åº¦()
 
     Dim TestDate As String
 
-Debug.Print "test_cmn”»’è_‰ïŒv”N“x"
-Debug.Print "İ’è’l@:–ß‚è’l"
+Debug.Print "test_cmnåˆ¤å®š_ä¼šè¨ˆå¹´åº¦"
+Debug.Print "è¨­å®šå€¤ã€€:æˆ»ã‚Šå€¤"
 
     TestDate = "20190331": GoSub Result
     TestDate = "20190401": GoSub Result
@@ -78,25 +78,25 @@ Debug.Print "İ’è’l@:–ß‚è’l"
     Exit Sub
     
 Result:
-    Debug.Print TestDate & ":" & cmn”»’è_‰ïŒv”N“x(CDate(Format(TestDate, "0000/00/00")))
+    Debug.Print TestDate & ":" & cmnåˆ¤å®š_ä¼šè¨ˆå¹´åº¦(CDate(Format(TestDate, "0000/00/00")))
 Return
 
 End Sub
 
 '---------------------------------------------------------------------------------------
-Public Function cmn”»’è_‰ïŒv”N“x(dtmDate As Date) As String
+Public Function cmnåˆ¤å®š_ä¼šè¨ˆå¹´åº¦(dtmDate As Date) As String
 
-    cmn”»’è_‰ïŒv”N“x = CStr(Year(DateAdd("m", -3, dtmDate)))
+    cmnåˆ¤å®š_ä¼šè¨ˆå¹´åº¦ = CStr(Year(DateAdd("m", -3, dtmDate)))
     
 End Function
 
 '---------------------------------------------------------------------------------------
-Sub test_”»’è_ãŠú‰ºŠú()
+Sub test_åˆ¤å®š_ä¸ŠæœŸä¸‹æœŸ()
 
     Dim TestDate As String
 
-Debug.Print "test_cmn”»’è_ãŠú‰ºŠú"
-Debug.Print "İ’è’l@:–ß‚è’l"
+Debug.Print "test_cmnåˆ¤å®š_ä¸ŠæœŸä¸‹æœŸ"
+Debug.Print "è¨­å®šå€¤ã€€:æˆ»ã‚Šå€¤"
 
     TestDate = "20190331": GoSub Result
     TestDate = "20190401": GoSub Result
@@ -108,22 +108,22 @@ Debug.Print "İ’è’l@:–ß‚è’l"
     Exit Sub
     
 Result:
-    Debug.Print TestDate & ":" & cmn”»’è_ãŠú‰ºŠú(CDate(Format(TestDate, "0000/00/00")))
+    Debug.Print TestDate & ":" & cmnåˆ¤å®š_ä¸ŠæœŸä¸‹æœŸ(CDate(Format(TestDate, "0000/00/00")))
 Return
 
 End Sub
 
 '---------------------------------------------------------------------------------------
-'ãŠú‰ºŠú
+'ä¸ŠæœŸä¸‹æœŸ
 '---------------------------------------------------------------------------------------
-Public Function cmn”»’è_ãŠú‰ºŠú(dtmDate As Date) As String
+Public Function cmnåˆ¤å®š_ä¸ŠæœŸä¸‹æœŸ(dtmDate As Date) As String
 
     Select Case Month(dtmDate)
                     
         Case 4, 5, 6, 7, 8, 9
-            cmn”»’è_ãŠú‰ºŠú = "ãŠú"
+            cmnåˆ¤å®š_ä¸ŠæœŸä¸‹æœŸ = "ä¸ŠæœŸ"
         Case 10, 11, 12, 1, 2, 3
-            cmn”»’è_ãŠú‰ºŠú = "‰ºŠú"
+            cmnåˆ¤å®š_ä¸ŠæœŸä¸‹æœŸ = "ä¸‹æœŸ"
     
     End Select
 
@@ -133,22 +133,22 @@ End Function
 '---------------------------------------------------------------------------------------
 Sub main()
 
-    Const ’ •[–¼ = "hoge’ •["
-    Const QERY As String = "ƒNƒGƒŠ1"
+    Const å¸³ç¥¨å = "hogeå¸³ç¥¨"
+    Const QERY As String = "ã‚¯ã‚¨ãƒª1"
     Dim strSQL          As String
     strSQL = "SELECT * FROM " & QERY & ";"
     
-    Call ”Ä—p_ƒŒƒR[ƒhƒZƒbƒg‚ÌƒZƒ‹“]‹L(’ •[–¼, 1, strSQL)
+    Call æ±ç”¨_ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚»ãƒƒãƒˆã®ã‚»ãƒ«è»¢è¨˜(å¸³ç¥¨å, 1, strSQL)
     
 End Sub
 
-Private Sub ”Ä—p_ƒŒƒR[ƒhƒZƒbƒg‚ÌƒZƒ‹“]‹L(’ •[–¼ As String, ƒwƒbƒ_s As Long, strSQL As String)
+Private Sub æ±ç”¨_ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚»ãƒƒãƒˆã®ã‚»ãƒ«è»¢è¨˜(å¸³ç¥¨å As String, ãƒ˜ãƒƒãƒ€è¡Œ As Long, strSQL As String)
 
-    'ŠÔŒv‘ª—p
+    'æ™‚é–“è¨ˆæ¸¬ç”¨
     Dim StartTime As Single
     StartTime = Timer
 
-    '// Exce‚ğ‹N“®
+    '// Exceã‚’èµ·å‹•
     Call xlappOpen
 
     Call Create_ADO_Recordset(strSQL)
@@ -157,18 +157,18 @@ Private Sub ”Ä—p_ƒŒƒR[ƒhƒZƒbƒg‚ÌƒZƒ‹“]‹L(’ •[–¼ As String, ƒwƒbƒ_s As Long, st
         .Visible = True
 '        .UserControl = True
 
-        Set wb = .Workbooks.Add(Template:=xlWBATWorksheet) ' ƒ[ƒNƒuƒbƒN‚ğì¬
+        Set wb = .Workbooks.Add(Template:=xlWBATWorksheet) ' ãƒ¯ãƒ¼ã‚¯ãƒ–ãƒƒã‚¯ã‚’ä½œæˆ
         Dim ws As Worksheet
         Set ws = wb.Worksheets(1)
-        ws.Name = ’ •[–¼ & "_" & Format(date, "yyyymmdd")
+        ws.Name = å¸³ç¥¨å & "_" & Format(date, "yyyymmdd")
         
-        'ƒwƒbƒ_sì¬
+        'ãƒ˜ãƒƒãƒ€è¡Œä½œæˆ
         Dim i As Integer 'myRs.Fields.Count
         For i = 0 To myRs.Fields.Count - 1
-            ws.Cells(ƒwƒbƒ_s, i + 1) = myRs.Fields(i).Name
+            ws.Cells(ãƒ˜ãƒƒãƒ€è¡Œ, i + 1) = myRs.Fields(i).Name
         Next
 
-        'ƒŒƒR[ƒhƒZƒbƒg‚ÌƒZƒ‹“]‹L
+        'ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚»ãƒƒãƒˆã®ã‚»ãƒ«è»¢è¨˜
         Dim FieldsCount As Long: FieldsCount = myRs.Fields.Count - 1
         Dim tableArray As Variant
         ReDim tableArray(myRs.RecordCount - 1, FieldsCount)
@@ -179,10 +179,10 @@ Private Sub ”Ä—p_ƒŒƒR[ƒhƒZƒbƒg‚ÌƒZƒ‹“]‹L(’ •[–¼ As String, ƒwƒbƒ_s As Long, st
             Next
             j = j + 1: myRs.MoveNext
         Loop
-        ws.Range(ws.Cells(ƒwƒbƒ_s + 1, 1), ws.Cells(myRs.RecordCount + 1, FieldsCount)).Value = tableArray
+        ws.Range(ws.Cells(ãƒ˜ãƒƒãƒ€è¡Œ + 1, 1), ws.Cells(myRs.RecordCount + 1, FieldsCount)).Value = tableArray
 
-        Call ‘S‘ÌŒrü(ws)
-        Call ’ •[dã‚°(ws, ’ •[–¼)
+        Call å…¨ä½“ç½«ç·š(ws)
+        Call å¸³ç¥¨ä»•ä¸Šã’(ws, å¸³ç¥¨å)
         
     End With
 
@@ -195,8 +195,8 @@ Debug.Print Timer - StartTime
 
 End Sub
 
-'’Pƒ•\Œü‚¯‚Ì‘S‘ÌŒrüˆ—
-Private Sub ‘S‘ÌŒrü(ws As Worksheet)
+'å˜ç´”è¡¨å‘ã‘ã®å…¨ä½“ç½«ç·šå‡¦ç†
+Private Sub å…¨ä½“ç½«ç·š(ws As Worksheet)
 
     With ws.Range("A1").CurrentRegion
     
@@ -245,9 +245,9 @@ Private Sub ‘S‘ÌŒrü(ws As Worksheet)
 
 End Sub
 
-Private Sub ’ •[dã‚°(ws As Worksheet, ’ •[–¼ As String)
+Private Sub å¸³ç¥¨ä»•ä¸Šã’(ws As Worksheet, å¸³ç¥¨å As String)
 
-    'ƒwƒbƒ_sF•t‚¯
+    'ãƒ˜ãƒƒãƒ€è¡Œè‰²ä»˜ã‘
     With ws.Range(ws.Cells(1, 1), ws.Cells(1, ws.UsedRange.Columns(ws.UsedRange.Columns.Count).Column)).Interior
         .Pattern = xlSolid
         .PatternColorIndex = xlAutomatic
@@ -256,12 +256,49 @@ Private Sub ’ •[dã‚°(ws As Worksheet, ’ •[–¼ As String)
         .PatternTintAndShade = 0
     End With
 
-    'ˆóüƒwƒbƒ_
+    'å°åˆ·ãƒ˜ãƒƒãƒ€
     With ws.PageSetup
 '            .LeftHeader = "left"
-        .CenterHeader = ’ •[–¼
+        .CenterHeader = å¸³ç¥¨å
         .RightHeader = Format(date, "yyyy/m/d")
         .CenterFooter = "&P/&N"
     End With
 
 End Sub
+
+
+'---------------------------------------------------------------------------------------
+'åˆ—é …ç›®ä¸­ã®è¡Œã§ã€é€£ç¶šã™ã‚‹æ–‡è¨€ãŒå…ˆé ­è¡Œã‚’é™¤ããƒ–ãƒ©ãƒ³ã‚¯åŸ‹ã‚ã™ã‚‹å‡¦ç†
+'   arg1:å¯¾è±¡ã®ãƒ¯ãƒ¼ã‚¯ã‚·ãƒ¼ãƒˆ
+'   arg2:å¯¾è±¡åˆ—
+'   arg3:é–‹å§‹è¡Œ
+'---------------------------------------------------------------------------------------
+Private Sub fncé‡è¤‡æ¶ˆã—(ws As Worksheet, å¯¾è±¡åˆ— As Long, é–‹å§‹è¡Œ As Long)
+
+    Dim xlLastRow   As Long                             'Excelè‡ªä½“ã®æœ€çµ‚è¡Œ
+    Dim LastRow     As Long                             'æœ€çµ‚è¡Œ
+ 
+    xlLastRow = Cells(Rows.Count, 1).row
+    LastRow = Cells(xlLastRow, å¯¾è±¡åˆ—).End(xlUp).row
+
+    Dim tmp As String: tmp = ""
+    Dim i As Long
+    For i = é–‹å§‹è¡Œ To LastRow
+        If tmp = ws.Cells(i, å¯¾è±¡åˆ—).Value Then
+            ws.Cells(i, å¯¾è±¡åˆ—).Value = ""
+        Else
+            tmp = ws.Cells(i, å¯¾è±¡åˆ—).Value
+        End If
+    Next
+
+End Sub
+
+
+
+
+
+
+
+
+
+
