@@ -175,7 +175,11 @@ FROM
  ORDER BY T2.列4
 )T1;
                     
-              
+select コード１,コード２,コード３
+  from テーブルA 
+ group by コード１,コード２,コード３
+order by min(NO1),min(NO2);
+                   
               
               
               
