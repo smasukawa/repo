@@ -160,9 +160,9 @@ Err_Proc:
 
 End Function
 
-'SELECT Max(t1.日付) AS 日付の最大
-'FROM 日付 AS t1
-'HAVING (((Max(DateSerial(Left([t1].[日付],4),Mid([t1].[日付],5,2),Right([t1].[日付],2))))<=#11/30/2019#));
+'SELECT Max(日付) AS 最新日 
+'FROM TBL_日付 
+'HAVING DateSerial(Left([日付],4),Mid([日付],5,2),Right([日付],2))<=#2019/12/30#
 
               
               
