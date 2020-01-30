@@ -164,6 +164,17 @@ End Function
 'FROM TBL_日付 
 'HAVING DateSerial(Left([日付],4),Mid([日付],5,2),Right([日付],2))<=#2019/12/30#
 
+SELECT T1.列1, T1.列2
+FROM 
+ (SELECT T2.列1, T2.列2, T2.列3, T2.列4
+  FROM(
+   SELECT DISTINCT 表1.列1,表1.列2,表2.列3, 表2.列4 
+   FROM 表1, 表2 
+   WHERE 表1.列1=表2.列3
+  ) T2
+ ORDER BY T2.列4
+)T1;
+                    
               
               
               
