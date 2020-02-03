@@ -43,3 +43,7 @@ GROUP BY t1.名前, t1.[ソート順]
 ORDER BY t1.[ソート順] 
 PIVOT t1.日時 In ("201904","201905","201906","201907","201908","201909","a","201910","201911","201912","202001","202002","202003");
 
+https://support.office.com/ja-jp/article/%E3%82%AF%E3%83%AD%E3%82%B9%E9%9B%86%E8%A8%88%E3%82%AF%E3%82%A8%E3%83%AA%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E9%9B%86%E8%A8%88%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E8%AA%AD%E3%81%BF%E3%82%84%E3%81%99%E3%81%8F%E3%81%99%E3%82%8B-8465b89c-2ff2-4cc8-ba60-2cd8484667e8#bm8
+https://oshiete.goo.ne.jp/qa/5827720.html
+https://qiita.com/fuk101/items/731379d12cd7f5559fb2
+
