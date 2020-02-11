@@ -180,6 +180,35 @@ select コード１,コード２,コード３
  group by コード１,コード２,コード３
 order by min(NO1),min(NO2);
                    
-              
+Sub testfnc3半期()
+    Dim 判定年月 As Date
+    Dim 開始年月 As String, 終了年月 As String
+    
+    '判定年月 = "2019/10/1"
+    判定年月 = "2019/9/30"
+    Call fnc3半期(判定年月, 開始年月, 終了年月)
+    Debug.Print 開始年月
+    Debug.Print 終了年月
+
+
+End Sub
+
+Public Function fnc3半期(判定年月 As Date, 開始年月 As String, 終了年月 As String)
+
+    Select Case cmn判定_上期下期(判定年月)
+    
+        Case "上期"
+        
+            開始年月 = CStr(CInt(cmn判定_会計年度(判定年月)) - 1) & "04"
+            終了年月 = cmn判定_会計年度(判定年月) & "09"
+        
+        Case "下期"
+        
+            開始年月 = CStr(CInt(cmn判定_会計年度(判定年月)) - 1) & "10"
+            終了年月 = cmn判定_会計年度(判定年月) & "03"
+    
+    End Select
+
+End Function
               
               
