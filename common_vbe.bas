@@ -1,28 +1,29 @@
 Attribute VB_Name = "common_vbe"
 Option Explicit
 '******************************************************************************
-'   ƒƒ“ƒeƒiƒ“ƒX‚É—L—p‚Èƒc[ƒ‹‚ğ‚Ü‚Æ‚ß‚½ƒ‚ƒWƒ…[ƒ‹
+'   ãƒ¡ãƒ³ãƒ†ãƒŠãƒ³ã‚¹æ™‚ã«æœ‰ç”¨ãªãƒ„ãƒ¼ãƒ«ã‚’ã¾ã¨ã‚ãŸãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«
+'   ver.20201004
 '
-'   •ÏX·•ª‚Ì”cˆ¬‚â‰ğÍ‚Ég‚¦‚éˆÈ‰º‚Ì‹@”\‚ğ’ñ‹Ÿ‚µ‚Ü‚·
+'   å¤‰æ›´å·®åˆ†ã®æŠŠæ¡ã‚„è§£æã«ä½¿ãˆã‚‹ä»¥ä¸‹ã®æ©Ÿèƒ½ã‚’æä¾›ã—ã¾ã™
 '
-'   ExportAccessObjects FƒJƒŒƒ“ƒgMDB‚ÌƒIƒuƒWƒFƒNƒg‚ğƒGƒNƒXƒ|[ƒg‚·‚é‹@”\
-'   ExportModules       Fƒ\[ƒXƒR[ƒh‚ğˆêŠ‡o—Í‚·‚é‹@”\
-'   ExportModules_List  FVBAƒ\[ƒXƒR[ƒhŠÖ”ˆê——‚ğo—Í‚·‚é‹@”\
-'   ExportQuery         FƒNƒGƒŠ‚Æ‚µ‚Ä‘‚©‚ê‚½‚r‚p‚k‚ğo—Í‚·‚é‹@”\
-'   ExportTableObjects  Fƒe[ƒuƒ‹EƒŒƒR[ƒhˆê——‚ğo—Í‚·‚é‹@”\
-'   PrintReferenceTable FQÆİ’è‚Ìˆê——‚ğƒCƒ~ƒfƒBƒGƒCƒg‚Éo—Í‚·‚é‹@”\
+'   ExportAccessObjects ï¼šã‚«ãƒ¬ãƒ³ãƒˆMDBã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆã™ã‚‹æ©Ÿèƒ½
+'   ExportModules       ï¼šã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã‚’ä¸€æ‹¬å‡ºåŠ›ã™ã‚‹æ©Ÿèƒ½
+'   ExportModules_List  ï¼šVBAã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰é–¢æ•°ä¸€è¦§ã‚’å‡ºåŠ›ã™ã‚‹æ©Ÿèƒ½
+'   ExportQuery         ï¼šã‚¯ã‚¨ãƒªã¨ã—ã¦æ›¸ã‹ã‚ŒãŸï¼³ï¼±ï¼¬ã‚’å‡ºåŠ›ã™ã‚‹æ©Ÿèƒ½
+'   ExportTableObjects  ï¼šãƒ†ãƒ¼ãƒ–ãƒ«ãƒ»ãƒ¬ã‚³ãƒ¼ãƒ‰ä¸€è¦§ã‚’å‡ºåŠ›ã™ã‚‹æ©Ÿèƒ½
+'   PrintReferenceTable ï¼šå‚ç…§è¨­å®šã®ä¸€è¦§ã‚’ã‚¤ãƒŸãƒ‡ã‚£ã‚¨ã‚¤ãƒˆã«å‡ºåŠ›ã™ã‚‹æ©Ÿèƒ½
 '
-'   ¦ExportModules,ExportModules_List‚É‚Â‚¢‚Ä‚ÍAccess‚Å‚È‚­‚Ä‚àg‚¦‚Ü‚·B
-'   ‚»‚Ìê‡‚ÍMyPathŠÖ”‚ğŠÂ‹«‚É‡‚í‚¹‚ÄC³‚µ‚Ä‚­‚¾‚³‚¢
+'   â€»ExportModules,ExportModules_Listã«ã¤ã„ã¦ã¯Accessã§ãªãã¦ã‚‚ä½¿ãˆã¾ã™ã€‚
+'   ãã®å ´åˆã¯MyPathé–¢æ•°ã‚’ç’°å¢ƒã«åˆã‚ã›ã¦ä¿®æ­£ã—ã¦ãã ã•ã„
 '
-'   QÆİ’èF  Microsoft Visual Basic for Application Extensibility
+'   å‚ç…§è¨­å®šï¼š  Microsoft Visual Basic for Application Extensibility
 '               Microsoft Scripting Runtime
 '******************************************************************************
 
-'Public Const extCsv             As String = ".csv"  'Šg’£q@CSVƒtƒ@ƒCƒ‹
+'Public Const extCsv             As String = ".csv"  'æ‹¡å¼µå­ã€€CSVãƒ•ã‚¡ã‚¤ãƒ«
 
 '******************************************************************************
-'   ƒVƒXƒeƒ€–ˆ‚ÉˆÙ‚È‚éPathw’è‚ÌØ‘Ö—p
+'   ã‚·ã‚¹ãƒ†ãƒ æ¯ã«ç•°ãªã‚‹PathæŒ‡å®šã®åˆ‡æ›¿ç”¨
 '******************************************************************************
 Public Function MyPath() As String
 '    MyPath = App.Path               'VB6
@@ -31,7 +32,7 @@ Public Function MyPath() As String
 End Function
 
 '******************************************************************************
-'   ƒJƒŒƒ“ƒgMDB‚ÌƒIƒuƒWƒFƒNƒg‚ğƒGƒNƒXƒ|[ƒg‚·‚é‹@”\
+'   ã‚«ãƒ¬ãƒ³ãƒˆMDBã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆã™ã‚‹æ©Ÿèƒ½
 '******************************************************************************
 Public Sub ExportAccessObjects()
 
@@ -39,7 +40,7 @@ Public Sub ExportAccessObjects()
     Dim curPrj  As Object
     Dim outDir  As String
 
-    Debug.Print "-- ƒIƒuƒWƒFƒNƒg ƒGƒNƒXƒ|[ƒgŠJn"
+    Debug.Print "-- ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆé–‹å§‹"
 
     outDir = outputDir & "\Obj"
     If Dir(outDir, vbDirectory) = "" Then MkDir outDir
@@ -47,18 +48,18 @@ Public Sub ExportAccessObjects()
     Set curDat = Application.CurrentData
     Set curPrj = Application.CurrentProject
 
-    ExportObjectType acQuery, curDat.AllQueries, outDir, ".qry"     'ƒNƒGƒŠ
-    ExportObjectType acForm, curPrj.AllForms, outDir, ".frm"        'ƒtƒH[ƒ€
-    ExportObjectType acReport, curPrj.AllReports, outDir, ".rpt"    'ƒŒƒ|[ƒg
-    ExportObjectType acMacro, curPrj.AllMacros, outDir, ".mcr"      'ƒ}ƒNƒ
-    ExportObjectType acModule, curPrj.AllModules, outDir, ".bas"    '•W€ƒ‚ƒWƒ…[ƒ‹‚¨‚æ‚ÑƒNƒ‰ƒX
+    ExportObjectType acQuery, curDat.AllQueries, outDir, ".qry"     'ã‚¯ã‚¨ãƒª
+    ExportObjectType acForm, curPrj.AllForms, outDir, ".frm"        'ãƒ•ã‚©ãƒ¼ãƒ 
+    ExportObjectType acReport, curPrj.AllReports, outDir, ".rpt"    'ãƒ¬ãƒãƒ¼ãƒˆ
+    ExportObjectType acMacro, curPrj.AllMacros, outDir, ".mcr"      'ãƒã‚¯ãƒ­
+    ExportObjectType acModule, curPrj.AllModules, outDir, ".bas"    'æ¨™æº–ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ãŠã‚ˆã³ã‚¯ãƒ©ã‚¹
 
-    Debug.Print "-- ƒIƒuƒWƒFƒNƒg ƒGƒNƒXƒ|[ƒgŠ®—¹"
+    Debug.Print "-- ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆå®Œäº†"
 
 End Sub
 
 '******************************************************************************
-'(ExportAccessObjectê—p‚ÌƒTƒuƒ‚ƒWƒ…[ƒ‹)
+'(ExportAccessObjectå°‚ç”¨ã®ã‚µãƒ–ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«)
 '******************************************************************************
 Private Sub ExportObjectType(objType As Integer, _
                              ObjCollection As Variant, _
@@ -77,7 +78,7 @@ Private Sub ExportObjectType(objType As Integer, _
 End Sub
 
 '******************************************************************************
-'  ƒ\[ƒXƒR[ƒh‚ğˆêŠ‡o—Í‚·‚é‹@”\
+'  ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã‚’ä¸€æ‹¬å‡ºåŠ›ã™ã‚‹æ©Ÿèƒ½
 '******************************************************************************
 Public Sub ExportModules()
 
@@ -88,7 +89,7 @@ Public Sub ExportModules()
     outDir = outputDir & "\src"
     If Dir(outDir, vbDirectory) = "" Then MkDir outDir
 
-    Debug.Print "-- ƒ\[ƒXƒR[ƒh ƒGƒNƒXƒ|[ƒgŠJn"
+    Debug.Print "-- ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆé–‹å§‹"
     For Each vbcComp In Application.VBE.ActiveVBProject.VBComponents
         Debug.Print vbcComp.Name
 
@@ -104,12 +105,12 @@ Public Sub ExportModules()
         End Select
         vbcComp.Export (outDir & "\" & vbcComp.Name & ext)
     Next
-    Debug.Print "-- ƒ\[ƒXƒR[ƒh ƒGƒNƒXƒ|[ƒgŠ®—¹"
+    Debug.Print "-- ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆå®Œäº†"
 
 End Sub
 
 '******************************************************************************
-'  VBAƒ\[ƒXƒR[ƒhŠÖ”ˆê——‚ğo—Í‚·‚é‹@”\
+'  VBAã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰é–¢æ•°ä¸€è¦§ã‚’å‡ºåŠ›ã™ã‚‹æ©Ÿèƒ½
 '******************************************************************************
 Public Sub ExportModules_List()
 
@@ -117,78 +118,78 @@ Public Sub ExportModules_List()
     Dim ts          As TextStream
     Dim vbcComp     As VBComponent
 
-    Dim connStr         As String   'csv•¶š—ñ
-    Dim DecFlg          As Boolean  'éŒ¾ƒZƒNƒVƒ‡ƒ“‚Ì”»’è—pƒtƒ‰ƒO
+    Dim connStr         As String   'csvæ–‡å­—åˆ—
+    Dim DecFlg          As Boolean  'å®£è¨€ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®åˆ¤å®šç”¨ãƒ•ãƒ©ã‚°
 
-    Debug.Print "VBAƒ\[ƒXƒR[ƒhŠÖ”ˆê——o—Íˆ—"
+    Debug.Print "VBAã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰é–¢æ•°ä¸€è¦§å‡ºåŠ›å‡¦ç†"
 
     DecFlg = False
     Set ts = fso.CreateTextFile(outputDir & "\" & "ModuleList_" & Format(Now, "yyyymmdd_hhmmss") & ".csv", True)
 
     connStr = ""
-    connStr = connStr & "ƒ‚ƒWƒ…[ƒ‹–¼"
-    connStr = connStr & ",ƒ‚ƒWƒ…[ƒ‹í—Ş"
-    connStr = connStr & ",ƒvƒƒV[ƒWƒƒ–¼"
-    connStr = connStr & ",ŠÖ”ƒXƒR[ƒv"
-    connStr = connStr & ",ÀƒXƒeƒbƒv”"
+    connStr = connStr & "ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«å"
+    connStr = connStr & ",ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ç¨®é¡"
+    connStr = connStr & ",ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£å"
+    connStr = connStr & ",é–¢æ•°ã‚¹ã‚³ãƒ¼ãƒ—"
+    connStr = connStr & ",å®Ÿã‚¹ãƒ†ãƒƒãƒ—æ•°"
     ts.WriteLine connStr
 
     On Error Resume Next
 
-    '‚±‚±‚ÌƒlƒXƒg[‚·‚¬EE‘Ê–Ú‚¾‚±‚ÌìÒ‘‚­‰½‚Æ‚©‚µ‚È‚¢‚ÆEE
+    'ã“ã“ã®ãƒã‚¹ãƒˆæ·±ã™ããƒ»ãƒ»é§„ç›®ã ã“ã®ä½œè€…æ—©ãä½•ã¨ã‹ã—ãªã„ã¨ãƒ»ãƒ»
     For Each vbcComp In Application.VBE.ActiveVBProject.VBComponents
         
-        Dim lineCount       As Long     'ƒR[ƒh‚ÌsŒJ‚èã‚°ƒJƒEƒ“ƒ^
-        Dim JudgeProcName   As String   'ƒvƒƒV[ƒWƒƒ–¼i”»’è—pj
-        Dim ProcName        As String   'ƒvƒƒV[ƒWƒƒ–¼()
-        Dim BeforeProc      As String   'ƒvƒƒV[ƒWƒƒØ‚è‘Ö‚í‚èƒ^ƒCƒ~ƒ“ƒO‚Ì”»’è—p
-        Dim TotalCount      As Long     'ƒvƒƒV[ƒWƒƒ‘”ƒJƒEƒ“ƒ^
+        Dim lineCount       As Long     'ã‚³ãƒ¼ãƒ‰ã®è¡Œç¹°ã‚Šä¸Šã’ã‚«ã‚¦ãƒ³ã‚¿
+        Dim JudgeProcName   As String   'ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£åï¼ˆåˆ¤å®šç”¨ï¼‰
+        Dim ProcName        As String   'ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£å()
+        Dim BeforeProc      As String   'ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£åˆ‡ã‚Šæ›¿ã‚ã‚Šã‚¿ã‚¤ãƒŸãƒ³ã‚°ã®åˆ¤å®šç”¨
+        Dim TotalCount      As Long     'ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£ç·æ•°ã‚«ã‚¦ãƒ³ã‚¿
         
-        '// ƒ‚ƒWƒ…[ƒ‹‚Ì‘Ss
+        '// ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®å…¨è¡Œ
         For lineCount = 1 To vbcComp.CodeModule.CountOfLines
         
-            Dim Step            As Long     'ÀƒXƒeƒbƒv”
+            Dim Step            As Long     'å®Ÿã‚¹ãƒ†ãƒƒãƒ—æ•°
         
             JudgeProcName = vbcComp.CodeModule.ProcOfLine(lineCount, vbext_pk_Proc)
             If JudgeProcName <> Empty And JudgeProcName <> BeforeProc Then
                 
-                Dim Status          As String   'ŠÖ”ƒXƒR[ƒv
+                Dim Status          As String   'é–¢æ•°ã‚¹ã‚³ãƒ¼ãƒ—
 
-                '// éŒ¾ƒZƒNƒVƒ‡ƒ“‚Ì”»’è
+                '// å®£è¨€ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®åˆ¤å®š
                 If DecFlg Then
                     ProcName = "Declarations"
                     Status = ""
 
-                    Dim procCount       As Long     'ƒvƒƒV[ƒWƒƒs”ƒJƒEƒ“ƒ^
+                    Dim procCount       As Long     'ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£è¡Œæ•°ã‚«ã‚¦ãƒ³ã‚¿
 
 
-                    'éŒ¾ƒZƒNƒVƒ‡ƒ“s‘”‚Ì‚¤‚¿ÀŒøs”‚ğæ“¾
+                    'å®£è¨€ã‚»ã‚¯ã‚·ãƒ§ãƒ³è¡Œç·æ•°ã®ã†ã¡å®ŸåŠ¹è¡Œæ•°ã‚’å–å¾—
                     For procCount = 1 To vbcComp.CodeModule.CountOfDeclarationLines
 
-                        '// s”ƒJƒEƒ“ƒg
+                        '// è¡Œæ•°ã‚«ã‚¦ãƒ³ãƒˆ
                         GoSub StepCount
                     
                     Next procCount
 
                     DecFlg = False
                     
-                    '// ƒ‚ƒWƒ…[ƒ‹í—Ş”»’è
+                    '// ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ç¨®é¡åˆ¤å®š
                     GoSub DetermineModuleClasses
                     
-                    '// ‘‚«‚İ
+                    '// æ›¸ãè¾¼ã¿
                     GoSub WriteLine
                     
                 End If
                 
                 ProcName = JudgeProcName
 
-                Dim ProcClasses     As Long     'ƒvƒƒV[ƒWƒƒí—Ş
-                '« ƒvƒƒV[ƒWƒƒí—Ş‚Ìˆø”‚ğ—\‚ßæ“¾‚Å‚«‚È‚¢‚½‚ßA‚±‚ñ‚È“DL‚¢‘“–‚½‚è‚ğ‚â‚é•K—v‚ª‚ ‚é
+                Dim ProcClasses     As Long     'ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£ç¨®é¡
+                'â†“ ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£ç¨®é¡ã®å¼•æ•°ã‚’äºˆã‚å–å¾—ã§ããªã„ãŸã‚ã€ã“ã‚“ãªæ³¥è‡­ã„ç·å½“ãŸã‚Šã‚’ã‚„ã‚‹å¿…è¦ãŒã‚ã‚‹
                 For ProcClasses = 0 To 3
                     
-                    Dim ProcString      As String   'ƒvƒƒV[ƒWƒƒéŒ¾•”•¶š—ñ
+                    Dim ProcString      As String   'ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£å®£è¨€éƒ¨æ–‡å­—åˆ—
 
-                    '// ŠÖ”ƒXƒR[ƒv‚Ì”»’è
+                    '// é–¢æ•°ã‚¹ã‚³ãƒ¼ãƒ—ã®åˆ¤å®š
                     ProcString = vbcComp.CodeModule.Lines _
                         (vbcComp.CodeModule.ProcBodyLine(JudgeProcName, ProcClasses), 1)
 
@@ -200,20 +201,20 @@ Public Sub ExportModules_List()
                                 Status = "Private"
                             End If
 
-                            '// ƒvƒƒV[ƒWƒƒs‘”‚Ì‚¤‚¿ÀŒøs”‚ğæ“¾
+                            '// ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£è¡Œç·æ•°ã®ã†ã¡å®ŸåŠ¹è¡Œæ•°ã‚’å–å¾—
                             For procCount = vbcComp.CodeModule.ProcStartLine(JudgeProcName, ProcClasses) _
                                 To vbcComp.CodeModule.ProcStartLine(JudgeProcName, ProcClasses) + _
                                    vbcComp.CodeModule.ProcCountLines(JudgeProcName, ProcClasses)
 
-                                '// s”ƒJƒEƒ“ƒg
+                                '// è¡Œæ•°ã‚«ã‚¦ãƒ³ãƒˆ
                                 GoSub StepCount
 
                             Next procCount
 
-                            '// ƒ‚ƒWƒ…[ƒ‹í—Ş”»’è
+                            '// ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ç¨®é¡åˆ¤å®š
                             GoSub DetermineModuleClasses
 
-                        Case 35 'ƒvƒƒV[ƒWƒƒí—Ş‚Ìˆø”‚ÆÀÛ‚ÌƒvƒƒV[ƒWƒƒí—Ş‚ª•sˆê’v‚Ìê‡AƒXƒ‹[‚µ‚Ä‘“–‚½‚èi‚ß‚é
+                        Case 35 'ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£ç¨®é¡ã®å¼•æ•°ã¨å®Ÿéš›ã®ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£ç¨®é¡ãŒä¸ä¸€è‡´ã®å ´åˆã€ã‚¹ãƒ«ãƒ¼ã—ã¦ç·å½“ãŸã‚Šé€²ã‚ã‚‹
                             Err.Clear
                         Case Else
                             GoTo ErrProc
@@ -221,7 +222,7 @@ Public Sub ExportModules_List()
 
                 Next ProcClasses
 
-                '// ‘‚«‚İ
+                '// æ›¸ãè¾¼ã¿
                 GoSub WriteLine
                 
                 Step = 0: TotalCount = TotalCount + 1
@@ -232,31 +233,31 @@ Public Sub ExportModules_List()
         DecFlg = True
     Next
     ts.Close: Set ts = Nothing: Set fso = Nothing
-    Debug.Print "o—ÍŠ®—¹F" & outputDir: Debug.Print "ƒvƒƒV[ƒWƒƒ‘”F" & TotalCount
+    Debug.Print "å‡ºåŠ›å®Œäº†ï¼š" & outputDir: Debug.Print "ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£ç·æ•°ï¼š" & TotalCount
 
     Exit Sub
 
-'// ƒ‚ƒWƒ…[ƒ‹í—Ş”»’è
+'// ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ç¨®é¡åˆ¤å®š
 DetermineModuleClasses:
-    Dim ModClasses      As String   'ƒ‚ƒWƒ…[ƒ‹í—Ş
+    Dim ModClasses      As String   'ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ç¨®é¡
     Select Case vbcComp.Type
-        Case vbext_ct_StdModule '•W€ƒ‚ƒWƒ…[ƒ‹
+        Case vbext_ct_StdModule 'æ¨™æº–ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«
             ModClasses = "Module" '
-        Case vbext_ct_ClassModule 'ƒNƒ‰ƒXƒ‚ƒWƒ…[ƒ‹
+        Case vbext_ct_ClassModule 'ã‚¯ãƒ©ã‚¹ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«
             ModClasses = "Class" '
-        Case vbext_ct_MSForm, vbext_ct_Document 'ƒ†[ƒU[ƒtƒH[ƒ€AƒIƒuƒWƒFƒNƒgƒ‚ƒWƒ…[ƒ‹
+        Case vbext_ct_MSForm, vbext_ct_Document 'ãƒ¦ãƒ¼ã‚¶ãƒ¼ãƒ•ã‚©ãƒ¼ãƒ ã€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«
             ModClasses = "Object"
         Case Else
             ModClasses = "-"
     End Select
 Return
 
-'// s”ƒJƒEƒ“ƒg
+'// è¡Œæ•°ã‚«ã‚¦ãƒ³ãƒˆ
 StepCount:
-    Dim codeString      As String   'ƒvƒƒV[ƒWƒƒs“à‚ÌƒR[ƒh•¶š—ñ
+    Dim codeString      As String   'ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£è¡Œå†…ã®ã‚³ãƒ¼ãƒ‰æ–‡å­—åˆ—
     codeString = vbcComp.CodeModule.Lines(procCount, 1)
     
-    'ƒRƒƒ“ƒg‚Æ‹ós‚ğƒJƒEƒ“ƒg‚©‚çœŠO‚·‚é
+    'ã‚³ãƒ¡ãƒ³ãƒˆã¨ç©ºè¡Œã‚’ã‚«ã‚¦ãƒ³ãƒˆã‹ã‚‰é™¤å¤–ã™ã‚‹
     If Left(Trim(codeString), 1) <> "'" _
     And Left(StrConv(Trim(codeString), vbUpperCase), 3) <> "REM" _
     And Trim(codeString) <> "" Then
@@ -265,7 +266,7 @@ StepCount:
 
 Return
 
-'// ‘‚«‚İ
+'// æ›¸ãè¾¼ã¿
 WriteLine:
     connStr = ""
     connStr = connStr & vbcComp.CodeModule.Name
@@ -281,7 +282,7 @@ ErrProc:
 End Sub
 
 '******************************************************************************
-'   ƒNƒGƒŠ‚Æ‚µ‚Ä‘‚©‚ê‚½‚r‚p‚k‚ğo—Í‚·‚é‹@”\
+'   ã‚¯ã‚¨ãƒªã¨ã—ã¦æ›¸ã‹ã‚ŒãŸï¼³ï¼±ï¼¬ã‚’å‡ºåŠ›ã™ã‚‹æ©Ÿèƒ½
 '******************************************************************************
 Public Sub ExportQuery()
 
@@ -291,76 +292,76 @@ Public Sub ExportQuery()
     Dim outDir  As String
     Dim qdfName As String
 
-    Debug.Print "-- ƒNƒGƒŠ‚r‚p‚k ƒGƒNƒXƒ|[ƒgŠJn"
+    Debug.Print "-- ã‚¯ã‚¨ãƒªï¼³ï¼±ï¼¬ ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆé–‹å§‹"
 
     outDir = outputDir & "\Query"
     If Dir(outDir, vbDirectory) = "" Then MkDir outDir
 
     For Each qdf In CurrentDb.QueryDefs
-        qdfName = Replace(qdf.Name, "/", "^") 'ƒNƒGƒŠ–¼‚É‘SŠp^g‚Á‚Ä‚é‚Æo—Ío—ˆ‚È‚¢‚Ì‚Å•ÏŠ·‚·‚é•K—v‚ ‚è
+        qdfName = Replace(qdf.Name, "/", "ï¼") 'ã‚¯ã‚¨ãƒªåã«å…¨è§’ï¼ä½¿ã£ã¦ã‚‹ã¨å‡ºåŠ›å‡ºæ¥ãªã„ã®ã§å¤‰æ›ã™ã‚‹å¿…è¦ã‚ã‚Š
         Set ts = fso.CreateTextFile(outDir & "\" & qdfName & ".sql")
         ts.Write qdf.SQL
         ts.Close
         Debug.Print "Save " & qdfName
     Next
 
-    Debug.Print "-- ƒNƒGƒŠ‚r‚p‚k ƒGƒNƒXƒ|[ƒgŠ®—¹"
+    Debug.Print "-- ã‚¯ã‚¨ãƒªï¼³ï¼±ï¼¬ ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆå®Œäº†"
 
 End Sub
 
 '******************************************************************************
-'   ƒe[ƒuƒ‹EƒŒƒR[ƒhˆê——o—Íˆ—
-'   DAO‚Å‚Í¬”“_ˆÈ‰ºŒ…”‚ªE‚¦‚Ü‚¹‚ÊEE
-'   ƒTƒCƒY‚Í•¨—ƒTƒCƒY‚ÅŒ…’·‚Å‚Í‚È‚¢‚µA‚ ‚Ü‚è—L“ï‚­‚ ‚è‚Ü‚¹‚ñEE
-'   ‹C‚ªŒü‚¢‚½‚ç‚»‚Ì‚¤‚¿ADOƒx[ƒX‚Åì‚è’¼‚·‚©‚à
+'   ãƒ†ãƒ¼ãƒ–ãƒ«ãƒ»ãƒ¬ã‚³ãƒ¼ãƒ‰ä¸€è¦§å‡ºåŠ›å‡¦ç†
+'   DAOã§ã¯å°æ•°ç‚¹ä»¥ä¸‹æ¡æ•°ãŒæ‹¾ãˆã¾ã›ã¬ãƒ»ãƒ»
+'   ã‚µã‚¤ã‚ºã¯ç‰©ç†ã‚µã‚¤ã‚ºã§æ¡é•·ã§ã¯ãªã„ã—ã€ã‚ã¾ã‚Šæœ‰é›£ãã‚ã‚Šã¾ã›ã‚“ãƒ»ãƒ»
+'   æ°—ãŒå‘ã„ãŸã‚‰ãã®ã†ã¡ADOãƒ™ãƒ¼ã‚¹ã§ä½œã‚Šç›´ã™ã‹ã‚‚
 '******************************************************************************
 Public Sub ExportTableObjects()
 
     Dim fso         As New Scripting.FileSystemObject
     Dim ts          As TextStream
-    Dim i           As Long             '€”Ô—p
-    Dim connStr     As String           '˜AŒ‹•¶š—ñ—pƒoƒbƒtƒ@
+    Dim i           As Long             'é …ç•ªç”¨
+    Dim connStr     As String           'é€£çµæ–‡å­—åˆ—ç”¨ãƒãƒƒãƒ•ã‚¡
     
     Dim tdf         As DAO.TableDef
     Dim dbs         As DAO.Database
     Dim fld         As DAO.Field
     
-    'åƒL[æ“¾—p
-    Dim idxLoop     As DAO.Index        'ƒCƒ“ƒfƒbƒNƒXƒIƒuƒWƒFƒNƒg‚æ‚èåƒL[‚ğ’T‚·
-    Dim idxFld      As Object           'ƒCƒ“ƒfƒbƒNƒX€–Ú‚ğŠi”[
-    Dim MainKey     As Variant          'åƒL[”»’è‚É—˜—p
-    Dim KeyNames    As Collection       'åƒL[–¼Ì‚ğŠi”[
-    Dim blnKey      As Boolean          'åƒL[”»’èƒtƒ‰ƒO
+    'ä¸»ã‚­ãƒ¼å–å¾—ç”¨
+    Dim idxLoop     As DAO.Index        'ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚ˆã‚Šä¸»ã‚­ãƒ¼ã‚’æ¢ã™
+    Dim idxFld      As Object           'ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹é …ç›®ã‚’æ ¼ç´
+    Dim MainKey     As Variant          'ä¸»ã‚­ãƒ¼åˆ¤å®šã«åˆ©ç”¨
+    Dim KeyNames    As Collection       'ä¸»ã‚­ãƒ¼åç§°ã‚’æ ¼ç´
+    Dim blnKey      As Boolean          'ä¸»ã‚­ãƒ¼åˆ¤å®šãƒ•ãƒ©ã‚°
 
-    Debug.Print "-- ƒe[ƒuƒ‹EƒŒƒR[ƒhˆê——o—Íˆ—"
+    Debug.Print "-- ãƒ†ãƒ¼ãƒ–ãƒ«ãƒ»ãƒ¬ã‚³ãƒ¼ãƒ‰ä¸€è¦§å‡ºåŠ›å‡¦ç†"
 
     Set ts = fso.CreateTextFile(outputDir & "\" & "TableObjects_" & _
                                 Format(Now, "YYYYMMDD_hhmmss") & ".csv", True)
 
 '    Set ts = fso.CreateTextFile(outputDir & "\" & "TableObjects" & extCsv, True)
 
-    '//@‚b‚r‚uƒwƒbƒ_
+    '//ã€€ï¼£ï¼³ï¼¶ãƒ˜ãƒƒãƒ€
     connStr = ""
-    connStr = connStr & "ƒe[ƒuƒ‹–¼"
-    connStr = connStr & ",€”Ô"
-    connStr = connStr & ",–¼‘O"
-    connStr = connStr & ",Œ^"
-    connStr = connStr & ",ƒTƒCƒY"
-    connStr = connStr & ",åƒL["
+    connStr = connStr & "ãƒ†ãƒ¼ãƒ–ãƒ«å"
+    connStr = connStr & ",é …ç•ª"
+    connStr = connStr & ",åå‰"
+    connStr = connStr & ",å‹"
+    connStr = connStr & ",ã‚µã‚¤ã‚º"
+    connStr = connStr & ",ä¸»ã‚­ãƒ¼"
     connStr = connStr & ",NOT NULL"
 
     ts.WriteLine connStr
 
     Set dbs = CurrentDb
 
-    '//ƒe[ƒuƒ‹–ˆ
+    '//ãƒ†ãƒ¼ãƒ–ãƒ«æ¯
     For Each tdf In dbs.TableDefs
-        'ƒVƒXƒeƒ€ƒe[ƒuƒ‹ˆÈŠO‚ğo—Í‘ÎÛ‚Æ‚·‚é
+        'ã‚·ã‚¹ãƒ†ãƒ ãƒ†ãƒ¼ãƒ–ãƒ«ä»¥å¤–ã‚’å‡ºåŠ›å¯¾è±¡ã¨ã™ã‚‹
         If Left(tdf.Name, 4) <> "MSys" Then
 
             Set KeyNames = New Collection
 
-            '// åƒL[‚Ìˆê——‚ğæ“¾
+            '// ä¸»ã‚­ãƒ¼ã®ä¸€è¦§ã‚’å–å¾—
             For Each idxLoop In tdf.Indexes
                 If idxLoop.Primary = True Then
                     For Each idxFld In idxLoop.Fields
@@ -371,23 +372,23 @@ Public Sub ExportTableObjects()
 
             i = 1
             
-            '//€–Ú–ˆ
+            '//é …ç›®æ¯
             For Each fld In tdf.Fields
                 
-                'åƒL[‚Ì”»’è
+                'ä¸»ã‚­ãƒ¼ã®åˆ¤å®š
                 For Each MainKey In KeyNames
                     If fld.Name = MainKey Then blnKey = True
                 Next MainKey
 
-                '// ‘‚«‚İ
+                '// æ›¸ãè¾¼ã¿
                 connStr = ""
-                connStr = connStr & tdf.Name                'ƒe[ƒuƒ‹–¼
-                connStr = connStr & "," & i                 '€”Ô
-                connStr = connStr & "," & fld.Name          '–¼‘O
-                connStr = connStr & "," & Mid(fld.Name, 3)  'Œ^
-                connStr = connStr & "," & fld.Size          'ƒTƒCƒY
+                connStr = connStr & tdf.Name                'ãƒ†ãƒ¼ãƒ–ãƒ«å
+                connStr = connStr & "," & i                 'é …ç•ª
+                connStr = connStr & "," & fld.Name          'åå‰
+                connStr = connStr & "," & Mid(fld.Name, 3)  'å‹
+                connStr = connStr & "," & fld.Size          'ã‚µã‚¤ã‚º
                 
-                If blnKey Then                              'åƒL[
+                If blnKey Then                              'ä¸»ã‚­ãƒ¼
                     connStr = connStr & ",TRUE"
                 Else
                     connStr = connStr & ","""""
@@ -411,48 +412,59 @@ Public Sub ExportTableObjects()
     Next tdf
 
     dbs.Close: Set dbs = Nothing
-    Debug.Print "-- o—ÍŠ®—¹F" & outputDir
+    Debug.Print "-- å‡ºåŠ›å®Œäº†ï¼š" & outputDir
     Exit Sub
 
 End Sub
 
 '******************************************************************************
-'   ì‹ÆƒtƒHƒ‹ƒ_–¼‚ğ•Ô‚·i‚È‚©‚Á‚½‚çì‚éjŠÖ”
-'       ƒlƒbƒgƒ[ƒNƒpƒX‚¾‚Æg‚¦‚È‚¢EEE
+'   ä½œæ¥­ãƒ•ã‚©ãƒ«ãƒ€åã‚’è¿”ã™ï¼ˆãªã‹ã£ãŸã‚‰ä½œã‚‹ï¼‰é–¢æ•°
 '******************************************************************************
 Private Function outputDir() As String
 
     Dim fso     As New Scripting.FileSystemObject
-    Dim tp      As Variant
-    Dim pp      As Variant
-    Dim i       As Variant
 
-    outputDir = MyPath & "\Source\" & Format(date, "yyyymmdd")
-
+    outputDir = MyPath & "\Source\" & Format(Date, "yyyymmdd") & "\" & _
+                    fso.GetBaseName(Application.CurrentProject.Name)
+    
     If (fso.FileExists(outputDir)) = False Then
+    
+        Dim tp As Variant, pp As Variant
         pp = ""
         tp = Split(outputDir, "\")
-        For Each i In tp
-            pp = pp & IIf(pp = "", "", "\") & i
-'            If Not fso.FolderExists(pp & "\") Then
-            If Dir(pp, vbDirectory) = "" Then
+        
+        Dim var As Variant
+        Dim i   As Long: i = 0
+        For Each var In tp
+        
+            If Left(outputDir, 1) = "\" And i = 3 Then 'ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯ãƒ‘ã‚¹å¯¾å¿œ
+                pp = "\\" & pp & IIf(pp = "", "", "\") & var
+            Else
+                pp = pp & IIf(pp = "", "", "\") & var
+            End If
+            
+            If Not fso.FolderExists(pp & "\") Then
                 fso.CreateFolder pp
             End If
-        Next i
+            
+            i = i + 1
+
+        Next var
+    
     End If
 
     Set fso = Nothing
 
 End Function
-
+            
 '*******************************************************************************
-'   w’è‚µ‚½ƒe[ƒuƒ‹‚Ì‘S€–Ú‚ÌUncodˆ³k‚ğ—LŒø‚É‚·‚é
-'   TblName F‘ÎÛ‚Ìƒe[ƒuƒ‹–¼
-'       ƒe[ƒuƒ‹Vİ‚É‚ÍAƒe[ƒuƒ‹‚ÌUncodˆ³k‚ªƒfƒtƒHƒ‹ƒg–³Œø‚È‚Ì‚Å
-'       ‘S€–Ú‚Ìˆ³k‚ğˆêŠ‡‚Å—LŒø‚É‚·‚éƒXƒNƒŠƒvƒg‚ğì‚Á‚Ä‚İ‚½
+'   æŒ‡å®šã—ãŸãƒ†ãƒ¼ãƒ–ãƒ«ã®å…¨é …ç›®ã®Uncodåœ§ç¸®ã‚’æœ‰åŠ¹ã«ã™ã‚‹
+'   TblName ï¼šå¯¾è±¡ã®ãƒ†ãƒ¼ãƒ–ãƒ«å
+'       ãƒ†ãƒ¼ãƒ–ãƒ«æ–°è¨­æ™‚ã«ã¯ã€ãƒ†ãƒ¼ãƒ–ãƒ«ã®Uncodåœ§ç¸®ãŒãƒ‡ãƒ•ã‚©ãƒ«ãƒˆç„¡åŠ¹ãªã®ã§
+'       å…¨é …ç›®ã®åœ§ç¸®ã‚’ä¸€æ‹¬ã§æœ‰åŠ¹ã«ã™ã‚‹ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’ä½œã£ã¦ã¿ãŸ
 '
-'       ‚µ‚©‚µAŠú‘Ò‚µ‚½ƒtƒ@ƒCƒ‹ƒTƒCƒY’áŒ¸Œø‰Ê‚Í‘S‚­Š´‚¶‚ç‚ê‚¸EE
-'       ‚±‚Ìİ’è‚Á‚ÄˆÓ–¡‚ ‚é‚ÌH
+'       ã—ã‹ã—ã€æœŸå¾…ã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºä½æ¸›åŠ¹æœã¯å…¨ãæ„Ÿã˜ã‚‰ã‚Œãšãƒ»ãƒ»
+'       ã“ã®è¨­å®šã£ã¦æ„å‘³ã‚ã‚‹ã®ï¼Ÿ
 '*******************************************************************************
 Public Sub compTable(TblName As String)
 
@@ -472,7 +484,7 @@ On Error GoTo Err:
                                             Value:=True)
             voFld.Properties.Append Object:=voPrp
             Set voPrp = Nothing
-            Debug.Print "ˆ³kÏF" & voFld.Name
+            Debug.Print "åœ§ç¸®æ¸ˆï¼š" & voFld.Name
         End If
     Next voFld
 
@@ -483,7 +495,7 @@ On Error GoTo Err:
 Err:
     Select Case Err.Number
 
-    Case 3367 'Šù‚Éˆ³k‚³‚ê‚Ä‚¢‚éê‡‚ÌƒGƒ‰[‚È‚Ì‚ÅƒXƒ‹[
+    Case 3367 'æ—¢ã«åœ§ç¸®ã•ã‚Œã¦ã„ã‚‹å ´åˆã®ã‚¨ãƒ©ãƒ¼ãªã®ã§ã‚¹ãƒ«ãƒ¼
         Resume Next
     Case Else
         MsgBox Err.Number & ":" & Err.Description
@@ -492,7 +504,7 @@ Err:
 End Sub
 
 ''*******************************************************************************
-''QÆİ’è‚Ìî•ñæ“¾
+''å‚ç…§è¨­å®šã®æƒ…å ±å–å¾—
 ''*******************************************************************************
 Public Sub PrintReferenceTable()
 
